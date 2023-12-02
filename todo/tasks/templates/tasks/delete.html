@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "tasks/base.html" %}
+{% block content %}
+    <div class="center-column">
+            <p>Are you sure you want to delete "{{item}}"?</p> <!–para mostrar el elemnto que queremos eliminar –>
+
+            <a href="{% url 'list' %}" style="color: yellow;">Cancel </a> 
+
+
+            <form method="POST" action="">
+                {% csrf_token%}
+                <input type="submit" name ="Confirm" class="center-checkbox">
+            </form> 
+    </div>
+{% endblock %}
